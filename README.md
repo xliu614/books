@@ -12,3 +12,4 @@ In the project directory, you can run:
 
 ### Notes
 #### define states in the lowerest common parent of the components
+#### use https://picsum.photos for generation of random pic for books
