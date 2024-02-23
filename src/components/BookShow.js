@@ -1,25 +1,27 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import BookEdit from "./BookEdit";
+import BooksContext from "../context/books";
 
-const BookShow = ({book, deleteBook, editBook}) => {
+const BookShow = ({book}) => {
     const [showEdit, setShowEdit] = useState(false);
+    const {deleteBookById} = useContext(BooksContext);
     
     const handleDelete = () => {
-      deleteBook(book.id);
+      deleteBookById(book.id);
     }
 
     const handleShowEdit = () =>{
         setShowEdit(!showEdit);
     }
 
-    const handleEditBook = (id, newTitle) => {
+    const handleEditBook = () => {
         setShowEdit(false);
-        editBook(id, newTitle);
+        // editBook(id, newTitle);
     }
 
     let content = <h3>{book.title}</h3>
     if(showEdit)
-       content = <BookEdit book={book} editBook={handleEditBook}/>
+       content = <BookEdit book={book} onSubmit={handleEditBook}/>
 
     return <div className="book-show">
         <img src={`https://picsum.photos/seed/${book.id}/300/200`} alt="books" />

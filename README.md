@@ -9,7 +9,8 @@ In the project directory, you can run:
 ### `npm start`
 
 ## Chapter 6 project from Modern React with Redux [2024 Update] 
-## Chapter 7 project from Modern React with Redux [2024 Update]
+## Chapter 7 project from Modern React with Redux [2024 Update] about useEffect
+## Chapter 8 project from Modern React with Redux [2024 Update] about useContext
 
 ### Notes
 #### define states in the lowerest common parent of the components
