@@ -20,3 +20,10 @@ In the project directory, you can run:
 - in a seperated terminal, run server by command: npm run server
 - so two servers are on: client side npm run start, server side npm run server
 - if 3001 port is already occupied then can specify some other port like: json-server -p 3005 --watch db.json
+
+#### Notes on useEffect
+- the arrow function's always got called and rendored the component immediately
+- whether or not the function's called later for the second or third time depends on the second argument
+- if the second argument is [] then the arrow function's never called again
+- if the second argument is empty, then the arrow function's called repeately 
+- if the second argument is [counter], then the arrow function's called again if counter variable is changed prior to the next render      
