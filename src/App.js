@@ -1,14 +1,14 @@
-import { useContext, useEffect } from "react";
+import {useEffect} from "react";
 import BookCreate from "./components/BookCreate";
 import BookList from "./components/BookList";
-import BooksContext from "./context/books";
+import useBooksContext from "./hooks/use-books-context";
 
 
 
 //DO NOT DO:
 //call getBooks directly, this will get useState of books infinitely
 const App = () => {
-    const { getBooks} = useContext(BooksContext);
+    const { getBooks} = useBooksContext();
 
     useEffect(() => {
         getBooks();
