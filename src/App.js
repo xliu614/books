@@ -8,11 +8,11 @@ import useBooksContext from "./hooks/use-books-context";
 //DO NOT DO:
 //call getBooks directly, this will get useState of books infinitely
 const App = () => {
-    const { getBooks} = useBooksContext();
+    const { stableGetBooks} = useBooksContext();
 
     useEffect(() => {
-        getBooks();
-    },[]);    
+        stableGetBooks();
+    },[stableGetBooks]);    
 
     return <div>
         <h1>Reading List</h1>

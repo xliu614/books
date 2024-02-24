@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useCallback } from "react";
 import axios from "axios";
 import config from "../config";
 
@@ -13,6 +13,8 @@ const Provider = ({children}) => {
         const response = await axios.get("/books");
         setBooks(response.data);
     }
+
+    const stableGetBooks = useCallback(getBooks,[]);
 
     const createBook = async (title) => {
         // const updatedBooks = [...books,{id:Math.round(Math.random()*9999), title}];
@@ -53,7 +55,7 @@ const Provider = ({children}) => {
         books,
         deleteBookById,
         editBookById,
-        getBooks,
+        stableGetBooks,
         createBook
      }
 

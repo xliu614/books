@@ -11,6 +11,7 @@ In the project directory, you can run:
 ## Chapter 6 project from Modern React with Redux [2024 Update] 
 ## Chapter 7 project from Modern React with Redux [2024 Update] about useEffect
 ## Chapter 8 project from Modern React with Redux [2024 Update] about useContext
+## Chapter 9 project from Modern React with Redux [2024 Update] about deeper understanding of hooks
 
 ### Notes
 #### define states in the lowerest common parent of the components
@@ -28,3 +29,10 @@ In the project directory, you can run:
 - if the second argument is [] then the arrow function's never called again
 - if the second argument is empty, then the arrow function's called repeately 
 - if the second argument is [counter], then the arrow function's called again if counter variable is changed prior to the next render      
+
+#### Notes on useCallback
+- useCallback does not run functions but provide a stablized reference to a function
+- this can solve the problem of useEffect when it render arrow functions again -- at that time the functions are changed, even though the name of the functions are the same.
+
+#### Some alerts on @babel/plugin-proposal-private-property-in-object
+- run this: npm install --save-dev @babel/plugin-proposal-private-property-in-object to add it in devDependencies
